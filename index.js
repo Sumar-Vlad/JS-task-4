@@ -5,10 +5,7 @@
 const currentMaxValue = 4589;
 let reverseMaxValue;
 
-const arrayOfValue = Array.from(String(currentMaxValue));
-const back = arrayOfValue.reverse();
-reverseMaxValue = back.join('');
-reverseMaxValue = Number(reverseMaxValue);
+reverseMaxValue = Number(Array.from(String(currentMaxValue)).reverse().join(''));
 
 console.log(reverseMaxValue); // 9854
 console.log(typeof reverseMaxValue); // 'number'
@@ -19,9 +16,7 @@ console.log(typeof reverseMaxValue); // 'number'
 const resultsArray = [1, 2, [3, [4]]];
 let productOfArray;
 
-const flatMatrix = resultsArray.flat(Infinity);
-
-productOfArray = flatMatrix.reduce(
+productOfArray = resultsArray.flat(Infinity).reduce(
     (prev, current) => {
         return prev * current;
     }
